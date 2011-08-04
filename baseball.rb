@@ -5,5 +5,8 @@ require 'mechanize'
 
 a = Mechanize.new.get 'http://kbodata.news.naver.com/m_rank/rank_team.asp'
 a.search('//table[@class="table_board2"]/tbody/tr').each {|v|
-  puts v.search('td').text
+  p = v.search('td')
+  puts p[0].text
+  puts p[1].text
+  puts p[-1].text
 }
